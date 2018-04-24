@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "Emplist";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" />
+    <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container" style="margin-top:10px">
+        <div class="row">
+            <div class="col-md-12 col-md-offset-0 alert alert-info">
+                <table class="border-collapse" id="mytable">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Email</th>
+                            <th>UserName</th>
+                            @*<th>Email Id</th>
+                                <th>City</th>
+                                <th>Country</th>*@
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script>
+                $(document).ready(function () {
+                    var otable = $("#mytable").DataTable({
+                        "ajax": {
+                            "url": "/Emp/Loaddata",
+                            "type": "get",
+                            "datatype": "json"
+                        },
+                        "columns": [
+                            { "data": "Id", "autoWidth": true },
+                            { "data": "Email", "autoWidth": true },
+                            { "data": "UserName", "autoWidth": true }
+                            //{ "data": "Empemailid", "autoWidth": true },
+                            //{ "data": "Empcity", "autoWidth": true },
+                            //{ "data": "Empcountry", "autoWidth": true }
+                        ]
+                    })
+                })
+    </script>
+
+</body>
+</html>
+
+

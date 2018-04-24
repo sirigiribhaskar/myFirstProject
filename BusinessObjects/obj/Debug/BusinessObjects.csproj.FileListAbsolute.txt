@@ -1,0 +1,6 @@
+D:\Bhaskar\HRM\BusinessObjects\bin\Debug\BusinessObjects.dll
+D:\Bhaskar\HRM\BusinessObjects\bin\Debug\BusinessObjects.pdb
+D:\Bhaskar\HRM\BusinessObjects\obj\Debug\BusinessObjects.csproj.CoreCompileInputs.cache
+D:\Bhaskar\HRM\BusinessObjects\obj\Debug\BusinessObjects.dll
+D:\Bhaskar\HRM\BusinessObjects\obj\Debug\BusinessObjects.pdb
+D:\Bhaskar\HRM\BusinessObjects\obj\Debug\BusinessObjects.csprojResolveAssemblyReference.cache

@@ -1,0 +1,11 @@
+D:\Bhaskar\HRM\DataAccessLayer\bin\Debug\DataAccessLayer.dll.config
+D:\Bhaskar\HRM\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+D:\Bhaskar\HRM\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+D:\Bhaskar\HRM\DataAccessLayer\bin\Debug\EntityFramework.dll
+D:\Bhaskar\HRM\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+D:\Bhaskar\HRM\DataAccessLayer\bin\Debug\EntityFramework.xml
+D:\Bhaskar\HRM\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+D:\Bhaskar\HRM\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+D:\Bhaskar\HRM\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+D:\Bhaskar\HRM\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+D:\Bhaskar\HRM\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache

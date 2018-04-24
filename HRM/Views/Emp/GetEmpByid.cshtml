@@ -1,0 +1,63 @@
+﻿@model DataAccessLayer.AspNetUser
+
+@{
+    ViewBag.Title = "GetEmpByid";
+    if (Model.DepartmentId == "D4")
+    {
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_EmpLayout.cshtml";
+    }
+}
+
+<h2 class="text-center">My Personal Info</h2>
+
+
+    <div class="container" style="margin-top:10px">
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-6 alert alert-info">
+
+
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.PhoneNumber)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.PhoneNumber)
+                    </dd>
+
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.UserName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.UserName)
+                    </dd>
+
+
+
+                </dl>
+            </div>
+        </div>
+    </div>
+    <p>
+        @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("My Leaves", "GetLeaveById", new { id = Model.Id }) |
+            @Html.ActionLink("Create leave", "CreateLeave", new { id = Model.Id }) |*@
+        <button class="col-md-2 col-md-offset-5 btn btn-info " onclick="location.href='@Url.Action("Edit","Emp",new { id = Model.Id })'"> Edit Profile</button>
+        @*<button class="btn btn-info" onclick="location.href='@Url.Action("GetLeaveById","Emp",new { id = Model.Id })'"> My Leaves</button>*@
+
+    </p>

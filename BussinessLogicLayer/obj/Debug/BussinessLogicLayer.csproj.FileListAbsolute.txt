@@ -1,0 +1,11 @@
+D:\Bhaskar\HRM\BussinessLogicLayer\bin\Debug\BussinessLogicLayer.dll
+D:\Bhaskar\HRM\BussinessLogicLayer\bin\Debug\BussinessLogicLayer.pdb
+D:\Bhaskar\HRM\BussinessLogicLayer\bin\Debug\DataAccessLayer.dll
+D:\Bhaskar\HRM\BussinessLogicLayer\bin\Debug\EntityFramework.dll
+D:\Bhaskar\HRM\BussinessLogicLayer\bin\Debug\DataAccessLayer.pdb
+D:\Bhaskar\HRM\BussinessLogicLayer\bin\Debug\DataAccessLayer.dll.config
+D:\Bhaskar\HRM\BussinessLogicLayer\bin\Debug\EntityFramework.xml
+D:\Bhaskar\HRM\BussinessLogicLayer\obj\Debug\BussinessLogicLayer.csprojResolveAssemblyReference.cache
+D:\Bhaskar\HRM\BussinessLogicLayer\obj\Debug\BussinessLogicLayer.csproj.CoreCompileInputs.cache
+D:\Bhaskar\HRM\BussinessLogicLayer\obj\Debug\BussinessLogicLayer.dll
+D:\Bhaskar\HRM\BussinessLogicLayer\obj\Debug\BussinessLogicLayer.pdb

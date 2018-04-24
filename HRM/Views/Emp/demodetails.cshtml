@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "demodetails";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@{
+    HRM.Demo demonew = (HRM.Demo)ViewData["Demo"];
+}
+
+<h2>demodetails</h2>
+
+<!DOCTYPEhtml>
+<html>
+<body>
+    <h2 align ="center">
+        </h2>
+        <form name="f1">
+            <div align="center" border="1">
+               
+                <table cellspacing="0" width="600">
+                    <tr>
+                        <td>Id</td>
+                        <td>Totalworkingdays </td>
+                        <td>Totalleaes</td>
+                        <td>Totaldays</td>
+                        <td>Totalworkingdaystilldate</td>
+
+                    </tr>
+                    <tr>
+                        <td>@demonew.Id</td>
+                        <td>@demonew.Totalworkingdays</td>
+                        <td>@demonew.Totalleaes</td>
+                        <td>@demonew.Totaldays</td>
+                        <td>@demonew.Totalworkingdaystilldate</td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+</body>
+</html>
+
