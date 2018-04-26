@@ -16,6 +16,7 @@ namespace HRM.Controllers
         // GET: Emp
         LeaveBLL objLeaveBLL = new LeaveBLL();
         EmpBLL objEmpBLL = new EmpBLL();
+        private HRMDB context = new HRMDB();
 
         public int? Dept { get; private set; }
 
@@ -451,10 +452,10 @@ namespace HRM.Controllers
         {
             HRMDB objHRMEmp = new HRMDB();
            
-            IEnumerable<SelectListItem> Dept = objHRMEmp.FinancialYearDetails.Select(p => new SelectListItem
+            IEnumerable<SelectListItem> Dept = context.FinancialYearDetails.Select(p => new SelectListItem
             {
-                Value = p.Id.ToString(),
-                Text = p.FinancialId
+                Value = p.FinancialId,
+                Text = p.FYearName
 
             });
             ViewData["YourData"] = Dept;
@@ -464,8 +465,7 @@ namespace HRM.Controllers
         public ActionResult AddFinancialReference(AttendanceDetail objAD)
         {
             HRMDB objHRMEmp = new HRMDB();
-            int i = int.Parse(objAD.financialId);
-            var data = (from x in objHRMEmp.FinancialYearDetails.Where(x => x.Id == i) select x).SingleOrDefault();
+            var data = (from x in objHRMEmp.FinancialYearDetails.Where(x => x.FinancialId == objAD.financialId) select x).SingleOrDefault();
             int count = (from x in objHRMEmp.LeaveDetails where x.Status == true && x.Id == objAD.Id select x).Count();
             DateTime enddate = Convert.ToDateTime(data.YearEnd);
             DateTime joindate = Convert.ToDateTime(objAD.JoiningDate);
@@ -481,7 +481,7 @@ namespace HRM.Controllers
             objAD.TotalLeaves = totalleaves;
             objAD.TotalWorkingDays = totalworkingdays.ToString();
             objAD.TotalWorkingDaysTillDate = totalworkingdaystilldate;
-            objAD.financialId = data.FinancialId;
+            objAD.financialId = data.FinancialId.ToString();
             objEmpBLL.AddFinancialReference(objAD);
             return View();
         }
@@ -492,7 +492,7 @@ namespace HRM.Controllers
             HRMDB objHRMEmp = new HRMDB();
             var ddd = (from x in objHRMEmp.AttendanceDetails.Where(x => x.Id == obj.Id) select x).SingleOrDefault();
             string i = ddd.financialId;
-            DateTime date = Convert.ToDateTime( DateTime.Now.Date.ToString());
+            DateTime date = Convert.ToDateTime(DateTime.Now.Date.ToString());
             DateTime joindate = Convert.ToDateTime(ddd.JoiningDate.ToString());
             var data = (from x in objHRMEmp.FinancialYearDetails.Where(x => x.FinancialId == i) select x).SingleOrDefault();
             int count = (from x in objHRMEmp.LeaveDetails where x.Status == true && x.Id == obj.Id select x).Count();
@@ -502,7 +502,7 @@ namespace HRM.Controllers
             demonew.Totalleaes = count.ToString();
             int totatworking = int.Parse(demonew.Totaldays) - int.Parse(demonew.Totalleaes);
             string totalworkingtilldate = date.Subtract(joindate).TotalDays.ToString();
-            int totalworkingtilldatewithleave =int.Parse(totalworkingtilldate) - int.Parse(demonew.Totalleaes);
+            int totalworkingtilldatewithleave = int.Parse(totalworkingtilldate) - int.Parse(demonew.Totalleaes);
             demonew.Totalworkingdaystilldate = totalworkingtilldatewithleave.ToString();
             demonew.Totalworkingdays = totatworking.ToString();
             ViewData["Demo"] = demonew;

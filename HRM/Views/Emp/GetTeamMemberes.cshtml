@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "GetTeamMembers";
-    Layout = "~/Views/Shared/_EmpLayout.cshtml";
+    Layout = "~/Views/Shared/_LayoutPageEmp.cshtml";
 }
 
 <h2 class="text-center">My Team Info</h2>
@@ -11,7 +11,7 @@
 
 <div class="row">
 
-    <div class="col-lg-12 col-lg-offset-0 alert alert-info">
+    <div class="col-lg-12 col-lg-offset-0 alert alert-dark">
         <table class="table">
             <tr>
                 <th>
@@ -25,7 +25,7 @@
                     @Html.DisplayNameFor(model => model.UserName)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.DepartmentId)
+                    @Html.DisplayNameFor(model => model.Dept.DepartmentName)
                 </th>
                 <th></th>
             </tr>
@@ -43,21 +43,7 @@
                         @Html.DisplayFor(modelItem => item.UserName)
                     </td>
                     <td>
-                        @*@if (item.DepartmentId == 1)
-                        {
-                            ViewBag.dept = "Testing";
-
-                        }
-                        else if (item.Deptid == 2)
-                        {
-                            ViewBag.dept = "Testing";
-                        }
-                        else if (item.Deptid == 3)
-                        {
-                            ViewBag.dept = "Testing";
-                        }*@
-                        @Html.DisplayFor(modelItem => item.DepartmentId)
-
+                        @Html.DisplayFor(modelItem => item.Dept.DepartmentName)
                     </td>
                 </tr>
             }

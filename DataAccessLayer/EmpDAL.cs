@@ -122,8 +122,48 @@ namespace DataAccessLayer
             context.AttendanceDetails.Add(objAD);
             context.SaveChanges();
         }
-      
-        
+        public IEnumerable<FinancialYearDetail> GetFinancialDetails()
+        {
+            var listFyears = context.FinancialYearDetails.ToList();
+            return listFyears;
+        }
+        public void CreateFyear(FinancialYearDetail objDept)
+        {
+            context.FinancialYearDetails.Add(objDept);
+            context.SaveChanges();
+        }
+        public FinancialYearDetail UpdateFyear(string id)
+        {
+            var year = context.FinancialYearDetails.Where(x => x.FinancialId == id).FirstOrDefault();
+            return year;
+        }
+        public void EditFyear(FinancialYearDetail objDept)
+        {
+            var year = context.FinancialYearDetails.Where(x => x.FinancialId == objDept.FinancialId).SingleOrDefault();
+            year.FYearName = objDept.FYearName;
+            context.SaveChanges();
+        }
+        public FinancialYearDetail DeleteFyear(string id)
+        {
+            var year = UpdateFyear(id);
+            return year;
+        }
+        //Delete the Fetched Record Based On Id
+        public void DeleteFyear1(string id)
+        {
+            var year = context.FinancialYearDetails.Where(x => x.FinancialId == id).FirstOrDefault();
+            context.FinancialYearDetails.Remove(year);
+            context.SaveChanges();
+        }
+        // Display The Particular Details Based On the Id
+        public FinancialYearDetail DetailsFyear(string id)
+        {
+            var year = UpdateFyear(id);
+            return year;
+
+        }
+
+
     }
     }
 

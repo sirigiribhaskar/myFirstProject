@@ -8,13 +8,12 @@ namespace DataAccessLayer
     public partial class HRMDB : DbContext
     {
         public HRMDB()
-            : base("name=HRMDB14")
+            : base("name=HRMDB16")
         {
         }
 
         public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
         public virtual DbSet<AttendanceDetail> AttendanceDetails { get; set; }
-        public virtual DbSet<City> Cities { get; set; }
         public virtual DbSet<Dept> Depts { get; set; }
         public virtual DbSet<FinancialYearDetail> FinancialYearDetails { get; set; }
         public virtual DbSet<LeaveDesc> LeaveDescs { get; set; }
@@ -46,18 +45,6 @@ namespace DataAccessLayer
                 .Property(e => e.financialId)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<City>()
-                .Property(e => e.CityId)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<City>()
-                .Property(e => e.CityName)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<City>()
-                .Property(e => e.StateId)
-                .IsUnicode(false);
-
             modelBuilder.Entity<Dept>()
                 .Property(e => e.DepartmentId)
                 .IsUnicode(false);
@@ -68,6 +55,10 @@ namespace DataAccessLayer
 
             modelBuilder.Entity<FinancialYearDetail>()
                 .Property(e => e.FinancialId)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<FinancialYearDetail>()
+                .Property(e => e.FYearName)
                 .IsUnicode(false);
 
             modelBuilder.Entity<FinancialYearDetail>()

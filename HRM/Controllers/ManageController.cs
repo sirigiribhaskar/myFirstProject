@@ -223,6 +223,11 @@ namespace HRM.Controllers
         // GET: /Manage/ChangePassword
         public ActionResult ChangePassword()
         {
+            HRMDB objHRMEmp = new HRMDB();
+            string ide = Session["id"].ToString();
+            var empdata = (from x in objHRMEmp.AspNetUsers where x.Id == ide select x).SingleOrDefault();
+            string Dept = empdata.DepartmentId;
+            ViewBag.deptid = Dept;
             return View();
         }
 

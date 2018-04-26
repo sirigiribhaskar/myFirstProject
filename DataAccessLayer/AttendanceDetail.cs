@@ -32,7 +32,5 @@ namespace DataAccessLayer
 
         [StringLength(50)]
         public string financialId { get; set; }
-
-        public virtual FinancialYearDetail FinancialYearDetail { get; set; }
     }
 }

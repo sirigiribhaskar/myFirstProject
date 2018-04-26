@@ -10,7 +10,7 @@
     }
     else
     {
-        Layout = "~/Views/Shared/_EmpLayout.cshtml";
+        Layout = "~/Views/Shared/_LayoutPageEmp.cshtml";
     }
 
 
@@ -23,10 +23,10 @@
     
     <div class="row">
         
-        <div class="col-lg-12 col-lg-offset-0 alert alert-info">
-            <h4 class="col-md-offset-5 text-center btn btn-default">
+        <div class="col-sm-12 col-sm-offset-0 alert alert-dark">
+            <button>
                 @Html.ActionLink("Create New leave", "CreateLeave")
-            </h4>
+            </button>
             <table class="table">
                 <tr>
                     <th>
@@ -39,7 +39,7 @@
                         @Html.DisplayNameFor(model => model.EndDate)
                     </th>
                     <th>
-                        @Html.DisplayName( "Leave Type")
+                        @Html.DisplayName("Leave Type")
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.Description)
@@ -52,7 +52,7 @@
                 </tr>
 
                 @foreach (var item in Model)
-                {
+        {
                 <tr>
                     <td>
                         @Html.DisplayFor(modelItem => item.AspNetUser.Email)
@@ -74,23 +74,23 @@
                     </td>
 
                     @if (item.Status == true)
-                    {
+    {
                 <td>
                     <button>
                         @Html.ActionLink("Details", "DetailsLeave", new { id = item.EventId })
                     </button>
                 </td>
-                    }
-                    else if (item.Status == false)
-                    {
+}
+else if (item.Status == false)
+{
                 <td>
                     <button>
                         @Html.ActionLink("Details", "DetailsLeave", new { id = item.EventId })
                     </button>
                 </td>
-                    }
-                    else
-                    {
+}
+else
+{
                 <td>
                     <button>
                         @Html.ActionLink("Edit", "EditLeave", new { id = item.EventId })
@@ -103,9 +103,9 @@
                     </button>
                     @*<button class="col-sm-4 btn btn-info " onclick="location.href='@Url.Action("EditLeave ", "Emp",  { id = item.EventId} )'"> Edit</button><button class="col-sm-4 btn btn-info " onclick="location.href='@Url.Action("Details","DetailsLeave ",new {id = item.EventId  })'">Details</button><button class="col-sm-4 btn btn-info " onclick="location.href='@Url.Action("Delete","Deleteleave ",new { id = item.EventId  })'">Delete</button>*@
                 </td>
-                    }
+}
                 </tr>
-                }
+}
 
             </table>
         </div>
