@@ -2,10 +2,10 @@
 
 @{
     ViewBag.Title = "CreateDept";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
 }
 
-<h2 class="text-center">Create Department</h2>
+<h2 >Create New Department</h2>
 
 @using (Html.BeginForm())
 {
@@ -14,9 +14,8 @@
 
         <div class="row">
 
-            <div class="col-md-10 col-md-offset-2 alert alert-info">
-           
-                <h4 class="text-center">Create New Department</h4>
+            <div class="col-md-10 col-md-offset-2 alert alert-dark">
+  
                     <hr />
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     <div class="form-group">

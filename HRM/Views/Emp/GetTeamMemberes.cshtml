@@ -2,7 +2,15 @@
 
 @{
     ViewBag.Title = "GetTeamMembers";
-    Layout = "~/Views/Shared/_LayoutPageEmp.cshtml";
+    if (ViewBag.deptid == "D4")
+    {
+        Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_LayoutPageEmp.cshtml";
+    }
+    //Layout = "~/Views/Shared/_LayoutPageEmp.cshtml";
 }
 
 <h2 class="text-center">My Team Info</h2>
@@ -31,24 +39,25 @@
             </tr>
 
             @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Email)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.PhoneNumber)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.UserName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Dept.DepartmentName)
-                    </td>
-                </tr>
-            }
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dept.DepartmentName)
+                </td>
+            </tr>
+    }
 
         </table>
-        </div>
+        <button class="col-md-2 col-md-offset-5 btn btn-dark " onclick="location.href='@Url.Action("EmptyLayout", "Emp")'"> Back</button>
+    </div>
     </div>
     </div>

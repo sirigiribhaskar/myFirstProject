@@ -1,41 +1,87 @@
 ﻿
 @{
     ViewBag.Title = "demodetails";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
 }
 @{
     HRM.Demo demonew = (HRM.Demo)ViewData["Demo"];
 }
 
-<h2>demodetails</h2>
+<h2>Attendance Details</h2>
 
 <!DOCTYPEhtml>
 <html>
 <body>
-    <h2 align ="center">
-        </h2>
-        <form name="f1">
-            <div align="center" border="1">
-               
-                <table cellspacing="0" width="600">
-                    <tr>
-                        <td>Id</td>
-                        <td>Totalworkingdays </td>
-                        <td>Totalleaes</td>
-                        <td>Totaldays</td>
-                        <td>Totalworkingdaystilldate</td>
+    <div class="container" style="margin-top:10px">
+        <div class="row">
+            <div class="col-md-5 col-md-offset-4 alert alert-dark">
 
-                    </tr>
-                    <tr>
-                        <td>@demonew.Id</td>
-                        <td>@demonew.Totalworkingdays</td>
-                        <td>@demonew.Totalleaes</td>
-                        <td>@demonew.Totaldays</td>
-                        <td>@demonew.Totalworkingdaystilldate</td>
-                    </tr>
-                </table>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => demonew.Id)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => demonew.Id)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => demonew.Totalworkingdays)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => demonew.Totalworkingdays)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => demonew.Totalleaes)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => demonew.Totalleaes)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => demonew.Totaldays)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => demonew.Totaldays)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => demonew.Totalworkingdaystilldate)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => demonew.Totalworkingdaystilldate)
+                    </dd>
+                </dl>
             </div>
-        </form>
+        </div>
+    </div>
+    <h2 align="center"></h2>
+    @*<form name="f1">
+        <div align="center" border="1">
+
+            <table cellspacing="0" width="600">
+                <tr>
+                    <td>Id</td>
+                    <td>Totalworkingdays </td>
+                    <td>Totalleaes</td>
+                    <td>Totaldays</td>
+                    <td>Totalworkingdaystilldate</td>
+
+                </tr>
+                <tr>
+                    <td>@demonew.Id</td>
+                    <td>@demonew.Totalworkingdays</td>
+                    <td>@demonew.Totalleaes</td>
+                    <td>@demonew.Totaldays</td>
+                    <td>@demonew.Totalworkingdaystilldate</td>
+                </tr>
+            </table>
+        </div>
+    </form>*@
 </body>
 </html>
 

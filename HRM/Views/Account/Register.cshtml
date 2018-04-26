@@ -1,14 +1,14 @@
 ﻿@model HRM.Models.RegisterViewModel
 @{
     ViewBag.Title = "Register";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
 }
 <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
 <script src="~/Scripts/jquery-3.3.1.min.js"></script>
 <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
 
 
-<h2 class="text-center"> Create New Registration </h2>
+<h2> Create New Registration </h2>
 
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
@@ -17,8 +17,8 @@
 
     <div class="container" style="margin-top:10px">
         <div class="row">
-            <div class="col-md-7 col-md-offset-3 alert alert-info">
-                <h4 class="text-center">Enter Employee Details To Register.</h4>
+            <div class="col-md-12 col-md-offset-3 alert alert-dark">
+                <h4>Enter Employee Details To Register.</h4>
                 <hr />
                 @Html.ValidationSummary("", new { @class = "text-danger" })
                 <div class="form-group">

@@ -34,6 +34,9 @@ namespace DataAccessLayer
         public void EditLeave(LeaveDetail objasp)
         {
             var leave = context.LeaveDetails.Where(x => x.EventId == objasp.EventId).SingleOrDefault();
+            leave.StartDate = objasp.StartDate;
+            leave.EndDate = objasp.EndDate;
+            leave.Description = objasp.Description;
             leave.Status = objasp.Status;
             context.SaveChanges();
         }

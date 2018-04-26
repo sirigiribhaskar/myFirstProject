@@ -4,7 +4,7 @@
     ViewBag.Title = "GetEmpByid";
     if (Model.DepartmentId == "D4")
     {
-        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+        Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
     }
     else
     {
@@ -47,12 +47,15 @@
                     @Html.DisplayFor(model => model.UserName)
                 </dd>
 
+                <button class="col-md-4 col-md-offset-5 btn btn-dark " onclick="location.href='@Url.Action("Edit","Emp",new { id = Model.Id })'"> Edit Profile</button>
+                <button class="col-md-4 col-md-offset-5 btn btn-dark " onclick="location.href='@Url.Action("EmptyLayout", "Emp")'"> Back</button>
+           
 
 
             </dl>
         </div>
     </div>
-    <button class="col-md-2 col-md-offset-5 btn btn-info " onclick="location.href='@Url.Action("Edit","Emp",new { id = Model.Id })'"> Edit Profile</button>
+   
 </div>
     <p>
         @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |

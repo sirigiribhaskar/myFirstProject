@@ -2,10 +2,10 @@
 
 @{
     ViewBag.Title = "DetailsDept";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
 }
 
-<h2 class="text-center">Department Details</h2>
+<h2 >Department Details</h2>
 
 <div>
     <hr />
@@ -13,22 +13,22 @@
 
         <div class="row">
 
-            <div class="col-lg-8 col-lg-offset-2 alert alert-info">
+            <div class="col-lg-8 col-lg-offset-2 alert alert-dark">
                 <dl class="dl-horizontal">
                     <dt>
-                        @Html.DisplayNameFor(model => model.Id) :
+                        @Html.DisplayNameFor(model => model.Id)
                     </dt>
 
                     <dd>
-                        @Html.DisplayFor(model => model.DepartmentId).
+                        @Html.DisplayFor(model => model.DepartmentId)
                     </dd>
 
                     <dt>
-                        @Html.DisplayNameFor(model => model.DepartmentName) :
+                        @Html.DisplayNameFor(model => model.DepartmentName) 
                     </dt>
 
                     <dd>
-                        @Html.DisplayFor(model => model.DepartmentName).
+                        @Html.DisplayFor(model => model.DepartmentName)
                     </dd>
 
                 </dl>

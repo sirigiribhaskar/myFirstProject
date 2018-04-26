@@ -6,7 +6,7 @@
 
     if (ViewBag.deptid== "D4")
     {
-        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+        Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
     }
     else
     {
@@ -53,61 +53,63 @@
 
                 @foreach (var item in Model)
         {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.AspNetUser.Email)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.StartDate)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.EndDate)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.LeaveDesc.Description)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Description)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Status)
-                    </td>
-
-                    @if (item.Status == true)
-    {
+            <tr>
                 <td>
-                    <button>
-                        @Html.ActionLink("Details", "DetailsLeave", new { id = item.EventId })
-                    </button>
+                    @Html.DisplayFor(modelItem => item.AspNetUser.Email)
                 </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LeaveDesc.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+
+                @if (item.Status == true)
+        {
+            <td>
+                <button>
+                    @Html.ActionLink("Details", "DetailsLeave", new { id = item.EventId })
+                </button>
+            </td>
 }
 else if (item.Status == false)
 {
-                <td>
-                    <button>
-                        @Html.ActionLink("Details", "DetailsLeave", new { id = item.EventId })
-                    </button>
-                </td>
+        <td>
+            <button>
+                @Html.ActionLink("Details", "DetailsLeave", new { id = item.EventId })
+            </button>
+        </td>
 }
 else
 {
-                <td>
-                    <button>
-                        @Html.ActionLink("Edit", "EditLeave", new { id = item.EventId })
-                    </button>
-                    <button>
-                        @Html.ActionLink("Details", "DetailsLeave", new { id = item.EventId })
-                    </button>
-                    <button>
-                        @Html.ActionLink("Delete", "Deleteleave", new { id = item.EventId })
-                    </button>
-                    @*<button class="col-sm-4 btn btn-info " onclick="location.href='@Url.Action("EditLeave ", "Emp",  { id = item.EventId} )'"> Edit</button><button class="col-sm-4 btn btn-info " onclick="location.href='@Url.Action("Details","DetailsLeave ",new {id = item.EventId  })'">Details</button><button class="col-sm-4 btn btn-info " onclick="location.href='@Url.Action("Delete","Deleteleave ",new { id = item.EventId  })'">Delete</button>*@
-                </td>
+        <td>
+            <button>
+                @Html.ActionLink("Edit", "EditLeave", new { id = item.EventId })
+            </button>
+            <button>
+                @Html.ActionLink("Details", "DetailsLeave", new { id = item.EventId })
+            </button>
+            <button>
+                @Html.ActionLink("Delete", "Deleteleave", new { id = item.EventId })
+            </button>
+
+            @*<button class="col-sm-4 btn btn-info " onclick="location.href='@Url.Action("EditLeave ", "Emp",  { id = item.EventId} )'"> Edit</button><button class="col-sm-4 btn btn-info " onclick="location.href='@Url.Action("Details","DetailsLeave ",new {id = item.EventId  })'">Details</button><button class="col-sm-4 btn btn-info " onclick="location.href='@Url.Action("Delete","Deleteleave ",new { id = item.EventId  })'">Delete</button>*@
+        </td>
 }
-                </tr>
+            </tr>
 }
 
             </table>
+            <button class="col-md-2 col-md-offset-5 btn btn-dark " onclick="location.href='@Url.Action("EmptyLayout", "Emp")'"> Back</button>
         </div>
     </div>
 </div>

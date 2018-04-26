@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "GetLeaves";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
 
 }
 
@@ -12,7 +12,7 @@
     </h5>*@
 <div class="container" style="margin-top:10px">
     <div class="row">
-        <div class="col-sm-0 col-sm-offset-0 alert alert-info">
+        <div class="col-sm-12 col-sm-offset-0 alert alert-dark">
             <table class="table">
                 <tr>
                     <th>
@@ -27,9 +27,9 @@
                     <th>
                         @Html.DisplayName("Leave Type")
                     </th>
-                    @*<th>
+                    <th>
                         @Html.DisplayNameFor(model => model.Description)
-                    </th>*@
+                    </th>
                     <th>
                         @Html.DisplayNameFor(model => model.Status)
                     </th>
@@ -51,9 +51,9 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.LeaveDesc.Description)
                     </td>
-                    @*<td>
+                    <td>
                         @Html.DisplayFor(modelItem => item.Description)
-                    </td>*@
+                    </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Status)
                     </td>
@@ -62,11 +62,11 @@
                             @Html.ActionLink("Edit", "EditLeaveAdmin", new { id = item.EventId }) |
                         </button>
                         <button>
-                            @Html.ActionLink("Details", "DetailsLeaveAdmin", new { id = item.EventId }) |
+                            @Html.ActionLink("Details", "DetailsLeaveAdmin", new { id = item.EventId }) 
                         </button>
-                        <button>
+                        @*<button>
                             @Html.ActionLink("Delete", "DeleteleaveAdmin", new { id = item.EventId })
-                        </button>
+                        </button>*@
                     </td>
                 </tr>
 }

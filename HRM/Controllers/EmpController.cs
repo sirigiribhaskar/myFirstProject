@@ -98,7 +98,7 @@ namespace HRM.Controllers
             //string id = Session["Empid"].ToString();
             if (empdata.DepartmentId == "D4")
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("GetEmpByid", "Emp", new { ide });
             }
             else
             {
@@ -278,6 +278,11 @@ namespace HRM.Controllers
 
             id = Session["id"].ToString();
             var team = objEmpBLL.GetTeamMembers(id);
+            HRMDB objHRMEmp = new HRMDB();
+            string ide = Session["id"].ToString();
+            var empdata = (from x in objHRMEmp.AspNetUsers where x.Id == ide select x).SingleOrDefault();
+            string Dept = empdata.DepartmentId;
+            ViewBag.deptid = Dept;
             return View(team);
         }
         public ActionResult ExportEmpData()

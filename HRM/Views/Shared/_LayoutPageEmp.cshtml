@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Sufee Admin - HTML5 Admin Template</title>
+    <title>IndOz Admin Template</title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="apple-icon.png">
     <link rel="shortcut icon" href="favicon.ico">
-
+    
     <link rel="apple-touch-icon" href="apple-icon.png">
     <link rel="shortcut icon" href="favicon.ico">
     <link href="~/Content/normalize.css" rel="stylesheet" />
@@ -46,31 +46,48 @@
                     <li class="active">
                         <a> <i class="menu-icon fa fa-dashboard"></i>Dashboard</a>
                     </li>
-
-                    <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
+                    
+                    <li></> @Html.ActionLink("My Profile", "GetEmpByid", "Emp")</li>
                     <li>
-                        <a> <i class="menu-icon ti-email"></i>My Profile</a>
-                        @Html.ActionLink("My Profile", "GetEmpByid", "Emp")
-
+                        @Html.ActionLink("My Leaves", "GetLeaveById", "Emp")
                     </li>
                     <li>
-                        <a> <i class="menu-icon ti-email"></i>My Leaves</a>
-                    @Html.ActionLink("My Leaves", "GetLeaveById", "Emp")</li>
-
-
-                    <li>
-                        <a> <i class="menu-icon ti-email"></i>My Team Info</a>
-                    @Html.ActionLink("My Team Info", "GetTeamMemberes", "Emp")</li>
-                    <li>
-                        <a> <i class="menu-icon ti-email"></i>Logout</a>
-                        @Html.Partial("_LoginPartial");
-                        </li>
+                        @Html.ActionLink("My Team Info", "GetTeamMemberes", "Emp")
+                    </li>
+                    <li>@Html.Partial("_LoginPartial")</li>
+                    @*<li class="menu-item-has-children dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>My Profile</a>
+            <ul class="sub-menu children dropdown-menu"></ul>
+        </li>
+        <li class="menu-item-has-children dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>My Leaves</a>
+            <ul class="sub-menu children dropdown-menu">
+                <li>
+                    @Html.ActionLink("My Leaves", "GetLeaveById", "Emp")
+                </li>
+            </ul>
+        </li>
+        <li class="menu-item-has-children dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-street-view"></i>My Team Info</a>
+            <ul class="sub-menu children dropdown-menu">
+                <li>
+                    @Html.ActionLink("My Team Info", "GetTeamMemberes", "Emp")
+                </li>
+            </ul>
+        </li>
+        <li class="menu-item-has-children dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Settings</a>
+            <ul class="sub-menu children dropdown-menu">
+                <li>@Html.Partial("_LoginPartial")</li>
+            </ul>
+        </li>*@
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
     </aside>
     <div>
-        <div class="col-sm-1">
+        <br />
+        <div class="col-md-1">
             <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
         </div>
     </div>

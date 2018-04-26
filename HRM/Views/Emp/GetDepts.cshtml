@@ -2,18 +2,18 @@
 
 @{
     ViewBag.Title = "GetDepts";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
 }
 
-<h2 class="text-center">Departments Info</h2>
+<h2 >Departments Info</h2>
 
 <div class="container" style="margin-top:10px">
 
     <div class="row">
 
-        <div class="col-lg-offset-0 col-lg-offset-0 alert alert-info">
-            <button class="text-center col-md-2 col-md-offset-5">
-                @Html.ActionLink("Create New Employee", "CreateDept", "Emp")
+        <div class="col-sm-8 col-sm-offset-0 alert alert-dark">
+            <button class="text-center col-sm-5 ">
+                @Html.ActionLink("Create New Dept", "CreateDept", "Emp")
             </button>
             <table class="table">
                 <tr>

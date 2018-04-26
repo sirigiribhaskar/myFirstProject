@@ -10,7 +10,7 @@ namespace HRM.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return Redirect("Account/Login");
         }
 
         public ActionResult About()

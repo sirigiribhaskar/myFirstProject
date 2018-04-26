@@ -125,7 +125,7 @@ aside.left-panel {
     font-family: 'Open Sans';
     font-size: 22px;
     float: none;
-    line-height: 50px;
+    line-height: 0px;
     margin: 0;
     text-align: left;
     text-transform: capitalize;

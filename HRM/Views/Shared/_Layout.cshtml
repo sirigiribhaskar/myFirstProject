@@ -10,7 +10,29 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-expand bg-dark navbar-danger " style="top:-50px">
+        <a class="navbar-brand" >
+            @Html.ActionLink("The IndOz Portal", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </a>
+        <ul class="navbar-nav ml-auto">
+            @*<li class="nav-item-active">
+                <a class="col-sm-1 nav-item" >
+                    @Html.ActionLink("Home", "Index", "Home")
+                </a>
+            </li>
+            <li class="nav-item-active">
+                @Html.ActionLink("About", "About", "Home")
+            </li>
+            <li class="nav-item-active">
+                    @Html.ActionLink("Contact", "Contact", "Home")
+            </li>*@
+            <li class="nav-item-active">
+                @Html.Partial("_LoginPartial")
+            </li>
+        </ul>
+
+    </nav>
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -27,10 +49,10 @@
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
-                
+
             </div>
         </div>
-    </div>
+    </div>*@
     <div class="container body-content">
         @RenderBody()
         <hr />
